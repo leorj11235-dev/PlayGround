@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#101b3b">
+  <title>Esquadrão Pipoca — Céu de Confete</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Esquadrão Pipoca, início"><span class="brand-mark">✦</span><span>ESQUADRÃO <b>PIPOCA</b></span></a>
+      <div class="top-note"><span class="live-dot"></span> OPERAÇÃO CÉU DE CONFETE</div>
+      <button class="sound-button" id="soundButton" aria-label="Ativar ou desativar som">♫ <span>SOM</span></button>
+    </header>
+    <section class="stage-wrap" aria-label="Jogo de avião Esquadrão Pipoca">
+      <div class="game-stage">
+        <canvas id="game" aria-label="Jogo de tiro com avião"></canvas>
+        <div class="hud" id="hud" aria-live="polite">
+          <div class="hud-block"><span class="hud-label">PONTUAÇÃO</span><strong id="score">000000</strong></div>
+          <div class="hud-center"><span class="stage-chip">FASE <b id="level">01</b></span></div>
+          <div class="hud-block hud-right"><span class="hud-label">AVIÕES</span><strong class="lives" id="lives">♥ ♥ ♥</strong></div>
+        </div>
+        <div class="overlay" id="overlay">
+          <div class="intro-card">
+            <div class="eyebrow"><span>✦</span> UMA AVENTURA NAS ALTURAS <span>✦</span></div>
+            <h1>ESQUADRÃO<br><em>PIPOCA!</em></h1>
+            <p class="intro-copy">O céu está cheio de encrenca.<br>Mostre aos vilões quem manda nas nuvens!</p>
+            <div class="plane-sticker" aria-hidden="true">✦</div>
+            <button class="start-button" id="startButton">DECOLAR <span>➜</span></button>
+            <p class="control-hint"><kbd>WASD</kbd> ou <kbd>← ↑ ↓ →</kbd> mover <i>•</i> <kbd>ESPAÇO</kbd> atirar</p>
+            <p class="touch-hint">Arraste para pilotar · toque em ATIRAR</p>
+          </div>
+          <div class="overlay-footer">1 JOGADOR <span>✦</span> SEM MEDO DE ALTURA</div>
+        </div>
+        <div class="pause-screen hidden" id="pauseScreen"><div class="pause-card"><span class="pause-icon">Ⅱ</span><h2>PAUSA NA NUVEM</h2><p>Respire fundo, piloto.</p><button id="resumeButton">CONTINUAR <b>▶</b></button><small>APERTE P OU ESC PARA VOLTAR</small></div></div>
+        <div class="end-screen hidden" id="endScreen"><div class="end-card"><span id="endEmoji" class="end-emoji">🏆</span><div class="eyebrow">MISSÃO CONCLUÍDA</div><h2 id="endTitle">VOCÊ É DEMAIS!</h2><p id="endCopy">O céu voltou a ficar tranquilo.</p><div class="final-score">PONTUAÇÃO <b id="finalScore">000000</b></div><button id="restartButton" class="start-button">VOAR DE NOVO <span>↻</span></button></div></div>
+        <div class="mobile-controls" id="mobileControls" aria-label="Controles de toque"><div class="stick-zone" id="stickZone"><div class="stick-base"><div class="stick-knob" id="stickKnob"></div></div></div><button class="fire-button" id="fireButton"><span>✦</span><small>ATIRAR</small></button></div>
+        <div class="toast hidden" id="toast">✦ PODER DE FOGO!</div>
+      </div>
+    </section>
+    <footer class="bottom-bar"><span>FEITO DE CORAGEM <b>✦</b> E UM POUCO DE GLITTER</span><span class="desktop-help">P <i>PAUSAR</i> <span class="footer-divider">|</span> ESPAÇO <i>ATIRAR</i></span><span class="footer-logo">✦ <b>PP</b></span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
