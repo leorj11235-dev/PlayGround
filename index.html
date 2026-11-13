@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101225">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>Neon Dojo — Arcade Fight</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cabinet">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Neon Dojo início"><span class="brand-mark">N<span>✦</span></span><span>NEON<span class="brand-dim">DOJO</span></span></a>
+      <div class="edition"><i></i> ARCADE EDITION <span>•</span> 199X</div>
+      <button class="sound-toggle" id="soundToggle" aria-label="Ativar ou desativar som"><span class="sound-icon">♪</span><span>SOM <b>ON</b></span></button>
+    </header>
+
+    <section class="game-shell" aria-label="Jogo de luta Neon Dojo">
+      <div class="game-rim"><div class="screen-wrap">
+        <canvas id="game" width="960" height="540" aria-label="Arena de luta 2D"></canvas>
+        <div class="screen-vignette"></div>
+        <div class="scanlines"></div>
+      </div></div>
+      <div class="cabinet-lights"><span></span><span></span><span></span><div>INSERT COIN <b>●</b></div><span></span><span></span><span></span></div>
+    </section>
+
+    <section class="controls" aria-label="Controles do jogo">
+      <div class="control-side movement-side">
+        <div class="control-label"><span>01</span> MOVIMENTO <small>WASD / SETAS</small></div>
+        <div class="dpad" aria-label="Direcional">
+          <button class="key up" data-control="up" aria-label="Pular">▲</button>
+          <button class="key left" data-control="left" aria-label="Mover para esquerda">◀</button>
+          <button class="key down" data-control="down" aria-label="Abaixar">▼</button>
+          <button class="key right" data-control="right" aria-label="Mover para direita">▶</button>
+          <div class="dpad-core"></div>
+        </div>
+      </div>
+      <div class="control-center">
+        <div class="control-label"><span>02</span> COMBATE <small>APERTE PARA LUTAR</small></div>
+        <div class="keyboard-hint"><kbd>J</kbd> SOCO <kbd>K</kbd> CHUTE <kbd>L</kbd> DEFESA <kbd>O</kbd> ESPECIAL</div>
+      </div>
+      <div class="control-side action-side">
+        <div class="control-label"><span>03</span> ATAQUE <small>J K U I</small></div>
+        <div class="action-pad">
+          <button class="fight-button punch light" data-control="punch" aria-label="Soco fraco"><b>J</b><span>SOCO<br><strong>FRACO</strong></span></button>
+          <button class="fight-button kick heavy" data-control="heavyKick" aria-label="Chute forte"><b>I</b><span>CHUTE<br><strong>FORTE</strong></span></button>
+          <button class="fight-button kick light" data-control="kick" aria-label="Chute fraco"><b>K</b><span>CHUTE<br><strong>FRACO</strong></span></button>
+          <button class="fight-button punch heavy" data-control="heavyPunch" aria-label="Soco forte"><b>U</b><span>SOCO<br><strong>FORTE</strong></span></button>
+          <button class="fight-button guard" data-control="guard" aria-label="Defender"><b>L</b><span>DEFESA</span></button>
+          <button class="fight-button special" data-control="special" aria-label="Ataque especial"><b>O</b><span>ESPECIAL <strong>✦</strong></span></button>
+        </div>
+      </div>
+    </section>
+    <footer class="footer"><span>← → MOVER <i>•</i> ↑ PULAR <i>•</i> ↓ ABAIXAR</span><span class="footer-center">UM ARCADE ORIGINAL <b>✦</b></span><span>GANHE 2 ROUNDS PARA VENCER <i>•</i> <a href="#howto">COMO JOGAR</a></span></footer>
+    <div class="mobile-tip" id="howto">Toque nos botões para lutar. Segure ◀ ▶ para se mover e ▲ para pular.</div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
